@@ -1,8 +1,8 @@
-# Dockerizing Django with Postgres, Gunicorn, and Nginx
+# Dockerizing Django with Postgres, Gunicorn, Nginx and Securing with Let's Encrypt
 
 ## Want to learn how to build this?
 
-Check out the [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
+Check out the [Dockerizing Django with Postgres, Gunicorn, and Nginx](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx) and [Securing a Containerized Django Application with Let's Encrypt](https://testdriven.io/blog/django-lets-encrypt/)
 
 ## Want to use this project?
 
