@@ -15,12 +15,15 @@ services:
       - ./.env.prod
     depends_on:
       - db
+      - redis
+
   db:
     image: postgres:14.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
+
   nginx-proxy:
     container_name: nginx-proxy
     build: nginx
@@ -37,6 +40,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
       - web
+
   nginx-proxy-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     env_file:
@@ -49,6 +53,11 @@ services:
       - acme:/etc/acme.sh
     depends_on:
       - nginx-proxy
+
+  redis:
+    image: redis:6
+    container_name: redis
+
 
 volumes:
   postgres_data:
